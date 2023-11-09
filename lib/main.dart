@@ -30,21 +30,24 @@ class _CurvedDevState extends State<CurvedDev> {
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
-      const Icon(
-        Icons.home,
-      ),
-      const Icon(
-        Icons.search,
-      ),
-      const Icon(
-        Icons.settings,
-      ),
+      const Icon(Icons.home, size: 30),
+      const Icon(Icons.search, size: 30),
+      const Icon(Icons.settings, size: 30),
     ];
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
           title: const Text("Edisi Belajar Flutter"),
         ),
+        body: Column(children: [
+          const TextField(
+              decoration: InputDecoration(labelText: "Kode Produk")),
+          const TextField(
+              decoration: InputDecoration(labelText: "Nama Produk")),
+          const TextField(
+              decoration: InputDecoration(labelText: "Harga Produk")),
+          ElevatedButton(onPressed: () {}, child: const Text("Simpan"))
+        ]),
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Colors.transparent,
           items: items,
